@@ -1,6 +1,11 @@
 name: Build docker image
 
 on:
+  push:
+    branches:
+      - "main"
+      - "deploy/dev"
+
   pull_request:
     branches:
       - "main"
