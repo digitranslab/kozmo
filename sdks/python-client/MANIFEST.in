@@ -1,0 +1,1 @@
+recursive-include kozmo_client *.py
