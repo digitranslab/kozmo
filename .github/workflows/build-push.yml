@@ -20,7 +20,8 @@ env:
 
 jobs:
   build:
-    runs-on: ${{ matrix.platform == 'linux/arm64' || 'ubuntu-latest' }}
+    runs-on: 'ubuntu-latest'
+#    runs-on: ${{ matrix.platform == 'linux/arm64' || 'ubuntu-latest' }}
     if: github.repository == 'digitranslab/kozmo'
     strategy:
       matrix:
