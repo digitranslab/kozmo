@@ -87,7 +87,6 @@ If you'd like to configure a highly-available setup, there are community-contrib
 - [YAML file](https://github.com/Winson-030/kozmo-kubernetes)
 
 #### Using Terraform for Deployment
-
 Deploy Kozmo to Cloud Platform with a single click using [terraform](https://www.terraform.io/)
 
 ##### Azure Global
@@ -97,7 +96,6 @@ Deploy Kozmo to Cloud Platform with a single click using [terraform](https://www
 - [Google Cloud Terraform by @sotazum](https://github.com/DeNA/kozmo-google-cloud-terraform)
 
 #### Using AWS CDK for Deployment
-
 Deploy Kozmo to AWS with [CDK](https://aws.amazon.com/cdk/)
 
 ##### AWS 

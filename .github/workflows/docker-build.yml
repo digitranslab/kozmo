@@ -1,10 +1,12 @@
 name: Build docker image
 
 on:
-  push:
-    branches:
-      - "main"
-      - "deploy/dev"
+#  push:
+#    branches:
+#      - "main"
+#      - "deploy/dev"
+
+  workflow_dispatch:
 
   pull_request:
     branches:

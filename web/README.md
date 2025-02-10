@@ -105,14 +105,3 @@ npm run test
 If you are not familiar with writing tests, here is some code to refer to:
 * [classnames.spec.ts](./utils/classnames.spec.ts)
 * [index.spec.tsx](./app/components/base/button/index.spec.tsx)
-
-
-
-
-## Documentation
-
-Visit <https://docs.kozmo.ai/getting-started/readme> to view the full documentation.
-
-## Community
-
-The Kozmo community can be found on [Discord community](https://discord.gg/5AEfbxcd9k), where you can ask questions, voice ideas, and share your projects.

@@ -121,12 +121,12 @@ print(result.get("answer"))
 - upload file when using vision model
 
 ```python
-from kozmo_client import DifyClient
+from kozmo_client import KozmoClient
 
 api_key = "your_api_key"
 
 # Initialize Client
-kozmo_client = DifyClient(api_key)
+kozmo_client = KozmoClient(api_key)
 
 file_path = "your_image_file_path"
 file_name = "panda.jpeg"

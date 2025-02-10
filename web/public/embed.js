@@ -1,6 +1,6 @@
 /** this file is used to embed the chatbot in a website
- * the difyChatbotConfig should be defined in the html file before this script is included
- * the difyChatbotConfig should contain the token of the chatbot
+ * the kozmoChatbotConfig should be defined in the html file before this script is included
+ * the kozmoChatbotConfig should contain the token of the chatbot
  * the token can be found in the chatbot settings page
  */
 
@@ -8,7 +8,7 @@
 
 (function () {
   // Constants for DOM element IDs and configuration key
-  const configKey = "difyChatbotConfig";
+  const configKey = "kozmoChatbotConfig";
   const buttonId = "kozmo-chatbot-bubble-button";
   const iframeId = "kozmo-chatbot-bubble-window";
   const config = window[configKey];

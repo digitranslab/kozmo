@@ -10,7 +10,7 @@ npm install kozmo-client
 After installing the SDK, you can use it in your project like this:
 
 ```js
-import { DifyClient, ChatClient, CompletionClient } from 'kozmo-client'
+import { KozmoClient, ChatClient, CompletionClient } from 'kozmo-client'
 
 const API_KEY = 'your-api-key-here'
 const user = `random-user-id`
@@ -49,7 +49,7 @@ chatClient.getConversationMessages(conversationId, user)
 chatClient.renameConversation(conversationId, name, user)
 
 
-const client = new DifyClient(API_KEY)
+const client = new KozmoClient(API_KEY)
 // Fetch application parameters
 client.getApplicationParameters(user)
 // Provide feedback for a message
@@ -58,6 +58,3 @@ client.messageFeedback(messageId, rating, user)
 ```
 
 Replace 'your-api-key-here' with your actual Kozmo API key.Replace 'your-app-id-here' with your actual Kozmo APP ID.
-
-## License
-This SDK is released under the MIT License.

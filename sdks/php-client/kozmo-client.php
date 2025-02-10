@@ -4,7 +4,7 @@ require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
-class DifyClient {
+class KozmoClient {
     protected $api_key;
     protected $base_url;
     protected $client;
@@ -101,7 +101,7 @@ class DifyClient {
     }
 }
 
-class CompletionClient extends DifyClient {
+class CompletionClient extends KozmoClient {
     public function create_completion_message($inputs, $response_mode, $user, $files = null) {
         $data = [
             'inputs' => $inputs,
@@ -113,7 +113,7 @@ class CompletionClient extends DifyClient {
     }
 }
 
-class ChatClient extends DifyClient {
+class ChatClient extends KozmoClient {
     public function create_chat_message($inputs, $query, $user, $response_mode = 'blocking', $conversation_id = null, $files = null) {
         $data = [
             'inputs' => $inputs,
@@ -196,7 +196,7 @@ class ChatClient extends DifyClient {
 
 }
 
-class WorkflowClient extends DifyClient{
+class WorkflowClient extends KozmoClient{
     public function run($inputs, $response_mode, $user) {
         $data = [
             'inputs' => $inputs,

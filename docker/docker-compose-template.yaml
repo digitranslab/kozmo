@@ -96,12 +96,12 @@ services:
     healthcheck:
       test: [ 'CMD', 'redis-cli', 'ping' ]
 
-  # The DifySandbox
+  # The KozmoSandbox
   sandbox:
     image: digitranslab/kozmo-sandbox:0.2.10
     restart: always
     environment:
-      # The DifySandbox configurations
+      # The KozmoSandbox configurations
       # Make sure you are changing this key for your deployment with a strong key.
       # You can generate a strong key using `openssl rand -base64 42`.
       API_KEY: ${SANDBOX_API_KEY:-kozmo-sandbox}
@@ -364,7 +364,7 @@ services:
         target: /opt/oracle/oradata
       - ./startupscripts:/opt/oracle/scripts/startup
     environment:
-      ORACLE_PWD: ${ORACLE_PWD:-Dify123456}
+      ORACLE_PWD: ${ORACLE_PWD:-Kozmo123456}
       ORACLE_CHARACTERSET: ${ORACLE_CHARACTERSET:-AL32UTF8}
 
   # Milvus vector database services

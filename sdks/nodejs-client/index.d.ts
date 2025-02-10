@@ -39,7 +39,7 @@ export declare class KozmoClient {
   getMeta(user: User): Promise<any>;
 }
 
-export declare class CompletionClient extends DifyClient {
+export declare class CompletionClient extends KozmoClient {
   createCompletionMessage(
     inputs: any,
     user: User,
@@ -48,7 +48,7 @@ export declare class CompletionClient extends DifyClient {
   ): Promise<any>;
 }
 
-export declare class ChatClient extends DifyClient {
+export declare class ChatClient extends KozmoClient {
   createChatMessage(
     inputs: any,
     query: string,
@@ -84,7 +84,7 @@ export declare class ChatClient extends DifyClient {
   audioToText(data: FormData): Promise<any>;
 }
 
-export declare class WorkflowClient extends DifyClient {
+export declare class WorkflowClient extends KozmoClient {
   run(inputs: any, user: User, stream?: boolean,): Promise<any>;
 
   stop(task_id: string, user: User): Promise<any>;

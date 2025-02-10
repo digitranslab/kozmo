@@ -188,7 +188,7 @@ export class KozmoClient {
   }
 }
 
-export class CompletionClient extends DifyClient {
+export class CompletionClient extends KozmoClient {
   createCompletionMessage(inputs, user, stream = false, files = null) {
     const data = {
       inputs,
@@ -221,7 +221,7 @@ export class CompletionClient extends DifyClient {
   }
 }
 
-export class ChatClient extends DifyClient {
+export class ChatClient extends KozmoClient {
   createChatMessage(
     inputs,
     query,
@@ -332,7 +332,7 @@ export class ChatClient extends DifyClient {
 
 }
 
-export class WorkflowClient extends DifyClient {
+export class WorkflowClient extends KozmoClient {
   run(inputs,user,stream) {
     const data = { 
       inputs, 

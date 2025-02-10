@@ -16,13 +16,13 @@ After installing the SDK, you can use it in your project like this:
 
 require 'vendor/autoload.php';
 
-use YourVendorName\DifyPHP\DifyClient;
+use YourVendorName\DifyPHP\KozmoClient;
 use YourVendorName\DifyPHP\CompletionClient;
 use YourVendorName\DifyPHP\ChatClient;
 
 $apiKey = 'your-api-key-here';
 
-$difyClient = new DifyClient($apiKey);
+$kozmoClient = new KozmoClient($apiKey);
 
 // Create a completion client
 $completionClient = new CompletionClient($apiKey);
@@ -61,15 +61,15 @@ $fileForUpload = [
         'name' => 'filename.jpg'
     ]
 ];
-$response = $difyClient->file_upload("user_id", $fileForUpload);
+$response = $kozmoClient->file_upload("user_id", $fileForUpload);
 $result = json_decode($response->getBody(), true);
 echo 'upload_file_id: ' . $result['id'];
 
 // Fetch application parameters
-$response = $difyClient->get_application_parameters("user_id");
+$response = $kozmoClient->get_application_parameters("user_id");
 
 // Provide feedback for a message
-$response = $difyClient->message_feedback($message_id, $rating, "user_id");
+$response = $kozmoClient->message_feedback($message_id, $rating, "user_id");
 
 // Other available methods:
 // - get_conversation_messages()

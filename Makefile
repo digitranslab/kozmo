@@ -7,12 +7,14 @@ VERSION=latest
 # Build Docker images
 build-web:
 	@echo "Building web Docker image: $(WEB_IMAGE):$(VERSION)..."
-	docker build -t $(WEB_IMAGE):$(VERSION) ./web
+	#docker build -t $(WEB_IMAGE):$(VERSION) ./web
+	docker buildx build -t $(WEB_IMAGE):$(VERSION) --platform linux/amd64,linux/arm64 ./web
 	@echo "Web Docker image built successfully: $(WEB_IMAGE):$(VERSION)"
 
 build-api:
 	@echo "Building API Docker image: $(API_IMAGE):$(VERSION)..."
-	docker build -t $(API_IMAGE):$(VERSION) ./api
+	#docker build -t $(API_IMAGE):$(VERSION) ./api
+	docker buildx build -t $(API_IMAGE):$(VERSION) --platform linux/amd64,linux/arm64 ./api
 	@echo "API Docker image built successfully: $(API_IMAGE):$(VERSION)"
 
 # Push Docker images

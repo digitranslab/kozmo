@@ -10,9 +10,9 @@
     "Kozmo.AI",
     "LLM"
   ],
-  "author": "Joel",
+  "author": "Digitrans Inc.",
   "contributors": [
-    "<crazywoola> <<427733928@qq.com>> (https://github.com/crazywoola)"
+    "developers@digi-trans.org"
   ],
   "license": "MIT",
   "scripts": {

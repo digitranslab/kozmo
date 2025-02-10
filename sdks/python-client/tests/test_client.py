@@ -5,7 +5,7 @@ import unittest
 from kozmo_client.client import (
     ChatClient,
     CompletionClient,
-    DifyClient,
+    KozmoClient,
     KnowledgeBaseClient,
 )
 
@@ -245,9 +245,9 @@ class TestCompletionClient(unittest.TestCase):
         self.assertIn("answer", response.text)
 
 
-class TestDifyClient(unittest.TestCase):
+class TestKozmoClient(unittest.TestCase):
     def setUp(self):
-        self.kozmo_client = DifyClient(API_KEY)
+        self.kozmo_client = KozmoClient(API_KEY)
 
     def test_message_feedback(self):
         response = self.kozmo_client.message_feedback(

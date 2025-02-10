@@ -438,7 +438,7 @@ const translation = {
     },
   },
   apiBasedExtension: {
-    title: 'API-Erweiterungen bieten zentralisiertes API-Management und vereinfachen die Konfiguration für eine einfache Verwendung in Difys Anwendungen.',
+    title: 'API-Erweiterungen bieten zentralisiertes API-Management und vereinfachen die Konfiguration für eine einfache Verwendung in Kozmos Anwendungen.',
     link: 'Erfahren Sie, wie Sie Ihre eigene API-Erweiterung entwickeln.',
     linkUrl: 'https://docs.kozmo.ai/features/extension/api_based_extension',
     add: 'API-Erweiterung hinzufügen',

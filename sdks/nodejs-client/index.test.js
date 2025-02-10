@@ -1,30 +1,30 @@
-import { DifyClient, BASE_URL, routes } from ".";
+import { KozmoClient, BASE_URL, routes } from ".";
 
 import axios from 'axios'
 
 jest.mock('axios')
 
 describe('Client', () => {
-  let difyClient
+  let kozmoClient
   beforeEach(() => {
-    difyClient = new DifyClient('test')
+    kozmoClient = new KozmoClient('test')
   })
 
   test('should create a client', () => {
-    expect(difyClient).toBeDefined();
+    expect(kozmoClient).toBeDefined();
   })
   // test updateApiKey
   test('should update the api key', () => {
-    difyClient.updateApiKey('test2');
-    expect(difyClient.apiKey).toBe('test2');
+    kozmoClient.updateApiKey('test2');
+    expect(kozmoClient.apiKey).toBe('test2');
   })
 });
 
 describe('Send Requests', () => {
-  let difyClient
+  let kozmoClient
 
   beforeEach(() => {
-    difyClient = new DifyClient('test')
+    kozmoClient = new KozmoClient('test')
   })
 
   afterEach(() => {
@@ -37,14 +37,14 @@ describe('Send Requests', () => {
     const expectedResponse = { data: 'response' }
     axios.mockResolvedValue(expectedResponse)
 
-    await difyClient.sendRequest(method, endpoint)
+    await kozmoClient.sendRequest(method, endpoint)
 
     expect(axios).toHaveBeenCalledWith({
       method,
       url: `${BASE_URL}${endpoint}`,
       params: null,
       headers: {
-        Authorization: `Bearer ${difyClient.apiKey}`,
+        Authorization: `Bearer ${kozmoClient.apiKey}`,
         'Content-Type': 'application/json',
       },
       responseType: 'json',
@@ -58,7 +58,7 @@ describe('Send Requests', () => {
     const errorMessage = 'Request failed with status code 404'
     axios.mockRejectedValue(new Error(errorMessage))
 
-    await expect(difyClient.sendRequest(method, endpoint)).rejects.toThrow(
+    await expect(kozmoClient.sendRequest(method, endpoint)).rejects.toThrow(
       errorMessage
     )
   })

@@ -3,7 +3,7 @@ import json
 import requests
 
 
-class DifyClient:
+class KozmoClient:
     def __init__(self, api_key, base_url: str = "https://api.kozmo.ai/v1"):
         self.api_key = api_key
         self.base_url = base_url
@@ -54,7 +54,7 @@ class DifyClient:
         return self._send_request("GET", "/meta", params=params)
 
 
-class CompletionClient(DifyClient):
+class CompletionClient(KozmoClient):
     def create_completion_message(self, inputs, response_mode, user, files=None):
         data = {
             "inputs": inputs,
@@ -70,7 +70,7 @@ class CompletionClient(DifyClient):
         )
 
 
-class ChatClient(DifyClient):
+class ChatClient(KozmoClient):
     def create_chat_message(
         self,
         inputs,
@@ -143,7 +143,7 @@ class ChatClient(DifyClient):
         return self._send_request_with_files("POST", "/audio-to-text", data, files)
 
 
-class WorkflowClient(DifyClient):
+class WorkflowClient(KozmoClient):
     def run(
         self, inputs: dict, response_mode: str = "streaming", user: str = "abc-123"
     ):
@@ -158,7 +158,7 @@ class WorkflowClient(DifyClient):
         return self._send_request("GET", f"/workflows/run/{workflow_run_id}")
 
 
-class KnowledgeBaseClient(DifyClient):
+class KnowledgeBaseClient(KozmoClient):
     def __init__(
         self,
         api_key,

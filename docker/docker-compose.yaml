@@ -333,7 +333,7 @@ x-shared-env: &shared-api-worker-env
   CHROMA_SERVER_AUTHN_CREDENTIALS: ${CHROMA_SERVER_AUTHN_CREDENTIALS:-kozmoai123456}
   CHROMA_SERVER_AUTHN_PROVIDER: ${CHROMA_SERVER_AUTHN_PROVIDER:-chromadb.auth.token_authn.TokenAuthenticationServerProvider}
   CHROMA_IS_PERSISTENT: ${CHROMA_IS_PERSISTENT:-TRUE}
-  ORACLE_PWD: ${ORACLE_PWD:-Dify123456}
+  ORACLE_PWD: ${ORACLE_PWD:-Kozmo123456}
   ORACLE_CHARACTERSET: ${ORACLE_CHARACTERSET:-AL32UTF8}
   ETCD_AUTO_COMPACTION_MODE: ${ETCD_AUTO_COMPACTION_MODE:-revision}
   ETCD_AUTO_COMPACTION_RETENTION: ${ETCD_AUTO_COMPACTION_RETENTION:-1000}
@@ -393,7 +393,7 @@ x-shared-env: &shared-api-worker-env
 services:
   # API service
   api:
-    image: digitranslab/kozmo-api:0.15.2
+    image: digitranslab/kozmo-api:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -416,7 +416,7 @@ services:
   # worker service
   # The Celery worker for processing the queue.
   worker:
-    image: digitranslab/kozmo-api:0.15.2
+    image: digitranslab/kozmo-api:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -438,7 +438,7 @@ services:
 
   # Frontend web application.
   web:
-    image: digitranslab/kozmo-web:0.15.2
+    image: digitranslab/kozmo-web:latest
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
@@ -487,12 +487,12 @@ services:
     healthcheck:
       test: [ 'CMD', 'redis-cli', 'ping' ]
 
-  # The DifySandbox
+  # The KozmoSandbox
   sandbox:
-    image: digitranslab/kozmo-sandbox:0.2.10
+    image: digitranslab/kozmo-sandbox:main-amd64
     restart: always
     environment:
-      # The DifySandbox configurations
+      # The KozmoSandbox configurations
       # Make sure you are changing this key for your deployment with a strong key.
       # You can generate a strong key using `openssl rand -base64 42`.
       API_KEY: ${SANDBOX_API_KEY:-kozmo-sandbox}
@@ -755,7 +755,7 @@ services:
         target: /opt/oracle/oradata
       - ./startupscripts:/opt/oracle/scripts/startup
     environment:
-      ORACLE_PWD: ${ORACLE_PWD:-Dify123456}
+      ORACLE_PWD: ${ORACLE_PWD:-Kozmo123456}
       ORACLE_CHARACTERSET: ${ORACLE_CHARACTERSET:-AL32UTF8}
 
   # Milvus vector database services
